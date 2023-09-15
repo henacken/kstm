@@ -1,11 +1,12 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import React from 'react'
+import Header from '@/components/organisms/Header'
 
-// className={styles.main}は、'./page.module.css'ファイルの　.main{}でCSS適応させることができるstyles.exampleも同じ
-export default function Home() {
+// kstmの画像が表示されないから修正必要
+export default function archive() {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.example}>Hello, kstm!!</h1>
-    </main>
+    <div>
+      <Header logoSrc="./kstm.png" logoAlt="hero" />
+      <h1>Hello, kstm!!</h1>
+    </div>
   )
 }
