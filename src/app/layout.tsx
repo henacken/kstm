@@ -1,8 +1,7 @@
-'use client' //usepathnameを使用するために記述
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { usePathname } from 'next/navigation'
+import AuthProvider from './context/AuthProvider'
 import Header from '@/components/organisms/Header'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,16 +17,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname()
-  const isRootPage = pathname === '/'
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        {!isRootPage && (
+        <AuthProvider>
           <Header logoSrc="./images/kstm.png" logoAlt="headerLogo" />
-        )}
-        {children}
+          {children}
+        </AuthProvider>
       </body>
     </html>
   )
