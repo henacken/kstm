@@ -25,4 +25,11 @@ export const options: NextAuthOptions = {
     logo: 'https://raw.githubusercontent.com/henacken/img/main/kstm.png', // Absolute URL to image
     buttonText: '', // Hex color code
   },
+  pages: {
+    signIn: '/auth/signin',
+    signOut: '',
+    error: '',
+    verifyRequest: '',
+    newUser: '',
+  },
 }

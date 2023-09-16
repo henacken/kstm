@@ -1,12 +1,20 @@
+//ランディングページ
 import React from 'react'
-import Header from '@/components/organisms/Header'
+import styles from './page.module.css'
+import Icon from '@/components/atoms/Icon'
 
-// kstmの画像が表示されないから修正必要
-export default function Home() {
+export default function archive() {
   return (
     <div>
-      <Header logoSrc="./kstm.png" logoAlt="hero" />
-      <h1>Hello, kstm!!</h1>
+      <div className={styles.page}>
+        <Icon
+          style={styles.heroLogo}
+          src={'./images/kstm.png'}
+          alt={'heroLogo'}
+        />
+        <h1>LT-platform</h1>
+        <h1>↓ランディングページ予定</h1>
+      </div>
     </div>
   )
 }
