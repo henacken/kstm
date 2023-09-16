@@ -9,4 +9,6 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ここに必要なスタイルを追加 */
+.headerLogo {
+  height: 2.6rem; /* ロゴの高さを調整 */
+}

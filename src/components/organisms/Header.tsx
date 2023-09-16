@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './organisms.module.css'
-import Logo from '../atoms/Logo'
-import LogoutButton from '../atoms/button'
+import Icon from '../atoms/Icon'
+import LogoutButton from '../atoms/LogoutButton'
 
 interface HeaderProps {
   logoSrc: string
@@ -11,7 +11,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ logoSrc, logoAlt }) => {
   return (
     <header className={styles.header}>
-      <Logo src={logoSrc} alt={logoAlt} />
+      <Icon style={styles.headerLogo} src={logoSrc} alt={logoAlt} />
       <LogoutButton />
     </header>
   )
