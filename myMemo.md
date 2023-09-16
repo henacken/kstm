@@ -15,6 +15,7 @@
 - 基本的にはsrc/appディレクトリ下を編集すればよい
 - ルーティングについては、以下を参照。例えば、./src/app/chat/page.tsx -> localhost:3000/chatというURLになる
 - 公式ドキュメント(ルーティングについて)[Next.js](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)
+- src/componentsディレクトリにはAtomic designのコンポーネントが入っている
 
 ## ファイル説明
 
