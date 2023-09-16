@@ -14,23 +14,4 @@ export const options: NextAuthOptions = {
       },
     }),
   ],
-  callbacks: {
-    // This is the callback that we want to use to get oAuth tokens
-    async jwt({ token, account }: any) {
-      if (account) {
-        token.accessToken = account.access_token
-        token.tokenType = account.token_type
-      }
-      return token
-    },
-
-    // This is the callback that we want to use to get the session
-    async session({ session, token }: any) {
-      if (session) {
-        session.accessToken = token.accessToken
-        session.tokenType = token.tokenType
-      }
-      return session
-    },
-  },
 }

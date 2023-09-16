@@ -5,7 +5,7 @@
     "moduleResolution": "Classic",
     "resolveJsonModule": false,
     "outDir": "./build/",
-    "noEmit": false,
+    "noEmit": false
   },
   "include": ["./src/server/*"]
 }
