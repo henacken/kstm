@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack'
 const MessageSend = () => {
   return (
     <div>
-      <Stack direction="row"spacing={2} sx={{width: 330, margin: 2}}>
+      <Stack direction="row" spacing={2} sx={{ width: 330, margin: 2 }}>
         <MessageType />
         <SendButton />
       </Stack>

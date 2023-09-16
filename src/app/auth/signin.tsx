@@ -1,35 +1,35 @@
-import type {
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-} from 'next'
-import { getProviders, signIn } from 'next-auth/react'
+import { signIn, getProviders } from 'next-auth/react'
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
 import { getServerSession } from 'next-auth/next'
-import { POST } from '../api/auth/[...nextauth]/route'
+import { GET } from '../api/auth/[...nextauth]/route'
 
-export default function SignIn({
+const SignIn = ({
   providers,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <>
-      {Object.values(providers).map((provider) => (
-        <div key={provider.name}>
-          <button onClick={() => signIn(provider.id)}>
-            Sign in with {provider.name}
-          </button>
-        </div>
-      ))}
-    </>
+    <main>
+      {providers &&
+        Object.values(providers).map((provider) => (
+          <div key={provider.name} style={{ marginBottom: 0 }}>
+            <button onClick={() => signIn(provider.id)}>
+              Sign in with {provider.name}
+            </button>
+          </div>
+        ))}
+    </main>
   )
 }
 
+export default SignIn
+
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerSession(context.req, context.res, POST)
+  const session = await getServerSession(context.req, context.res, GET)
 
   // If the user is already logged in, redirect.
   // Note: Make sure not to redirect to the same page
   // To avoid an infinite loop!
   if (session) {
-    return { redirect: { destination: '/' } }
+    return { redirect: { destination: '/home' } }
   }
 
   const providers = await getProviders()
