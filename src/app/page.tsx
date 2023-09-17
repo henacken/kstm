@@ -1,15 +1,20 @@
 //ログイン(ランディング)ページ
 import React from 'react'
-import Button from '@mui/material/Button'
+import styles from './page.module.css'
+import Icon from '@/components/atoms/Icon'
 
 export default function archive() {
   return (
     <div>
-      <h1>Hello, kstm!!</h1>
-      <h1>LOGIN</h1>
-      <Button variant="contained" color="error" disableElevation>
-        logout
-      </Button>
+      <div className={styles.page}>
+        <Icon
+          style={styles.heroLogo}
+          src={'./images/kstm.png'}
+          alt={'heroLogo'}
+        />
+        <h1>LT-platform</h1>
+        <h1>↓ログイン画面予定</h1>
+      </div>
     </div>
   )
 }

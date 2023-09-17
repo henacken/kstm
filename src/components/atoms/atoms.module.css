@@ -1,10 +1,10 @@
-.Logo {
-  height: 40px; /* ロゴの高さを調整 */
+/* .Logo {
+  height: 40px;
 }
 
 .LogoutButton {
-  background-color: #e74c3c; /* ログアウトボタンの背景色 */
-  color: #fff; /* ログアウトボタンの文字色 */
+  background-color: #e74c3c;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -13,4 +13,4 @@
 
 .LogoutButton:hover {
   background-color: brown;
-}
+} */

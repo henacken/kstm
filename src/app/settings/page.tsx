@@ -1,4 +1,4 @@
-//設定
+//設定画面
 import React from 'react'
 
 export default function archive() {

@@ -1,4 +1,4 @@
-//アーカイブテンプレート
+//アーカイブ画面テンプレート
 import React from 'react'
 
 export default function archive() {
