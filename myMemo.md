@@ -16,9 +16,10 @@
 - ルーティングについては、以下を参照。例えば、./src/app/chat/page.tsx -> localhost:3000/chatというURLになる
 - 公式ドキュメント(ルーティングについて)[Next.js](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)
 - src/componentsディレクトリにはAtomic designのコンポーネントが入っている
+- 画像ファイルはlt-platform/publicディレクトリ下に保存し，publicディレクトリからの相対パスで画像を指定，表示させる．(参考：https://qiita.com/only/items/311a0dec256ecfd5d8c9)
 
 ## ファイル説明
-
+src/app/
 - layoutファイル -> そのファイルの階層下での共有するUI
 - globals.css -> ファイル全体に適応するCSS
 - pageファイル -> ルート(/)で表示されるファイル
