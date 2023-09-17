@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "dev-ws": "nodemon"
+    "dev": "nodemon",
+    "build": "tsc -p tsconfig.server.json&next build",
+    "start": "set NODE_ENV=production&node ./build/index.js",
+    "lint": "next lint"
   },
   "dependencies": {
     "@types/node": "20.6.0",
