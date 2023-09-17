@@ -19,8 +19,11 @@
 - 画像ファイルはlt-platform/publicディレクトリ下に保存し，publicディレクトリからの相対パスで画像を指定，表示させる．(参考：https://qiita.com/only/items/311a0dec256ecfd5d8c9)
 
 ## ファイル説明
+
 src/app/
+
 - layoutファイル -> そのファイルの階層下での共有するUI
+”use cliant”という記述について「ファイルに "use client "が定義されると、子コンポーネントを含む、そのファイルにインポートされた他のすべてのモジュールは、クライアントバンドルの一部とみなされます。」https://zenn.dev/luvmini511/articles/ec0e874a2cc1f1
 - globals.css -> ファイル全体に適応するCSS
 - pageファイル -> ルート(/)で表示されるファイル
 - page.module.css -> 特定のクラスでCSSを適応するためのファイル
