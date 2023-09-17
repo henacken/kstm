@@ -6,7 +6,7 @@ const LogoutButton = () => {
   return (
     <div>
       {/* <button className={styles.LogoutButton}>logout</button> */}
-      <Button variant="contained" color="error" disableElevation>
+      <Button href="/logout" variant="contained" color="error" disableElevation>
         logout
       </Button>
     </div>
