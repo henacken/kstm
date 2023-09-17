@@ -4,6 +4,7 @@
 - React(多分)
 - DB(多分)
 - TypeScript
+- material-ui
 
 ### 静的解析ツール
 
@@ -32,3 +33,10 @@ src/app/
 
 - [古いバージョン]https://youtu.be/eEP7CLqnRr0?si=0wv6KqRrTw3I5BLN
 - [新しいバージョン]https://youtu.be/VcMW2C9VNtI?si=ervNmO8dAEj45t0F
+
+## material-uiについて
+- インストール方法 https://mui.com/material-ui/getting-started/installation/
+一番上の”Default installation”のnpmのみ実行した
+- テンプレート https://mui.com/material-ui/getting-started/templates/
+ログイン画面など使えそうなテンプレが乗っている
+- コンポーネントの使い方(Button) https://mui.com/material-ui/react-button/
