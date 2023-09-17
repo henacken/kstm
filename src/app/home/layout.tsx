@@ -1,6 +1,8 @@
-import './globals.css'
+import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import AuthProvider from '../context/AuthProvider'
+import Header from '@/components/organisms/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,8 +18,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <AuthProvider>
+      <Header logoSrc="../images/kstm.png" logoAlt="headerLogo" />
+      {children}
+    </AuthProvider>
   )
 }

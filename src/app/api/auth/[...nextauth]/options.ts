@@ -40,12 +40,11 @@ export const options: NextAuthOptions = {
   },
 
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/login',
+    signOut: '/logout',
   },
+
   theme: {
-    colorScheme: 'auto', // "auto" | "dark" | "light"
-    brandColor: '', // Hex color code
-    logo: 'https://raw.githubusercontent.com/henacken/img/main/kstm.png', // Absolute URL to image
-    buttonText: '', // Hex color code
+    logo: 'https://github.com/henacken/img/blob/main/kstm.png?raw=true',
   },
 }
