@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from './atoms.module.css'
-import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box'
 import CommentMessage from '@/components/molecules/CommentMessage'
 import SystemMessage from '@/components/molecules/SystemMessage'
-import Box from '@mui/material/Box'
 
 interface ChatLogProp {
-  ChatLog: string //ここにメッセージのデータを入れるようにする？
+  ChatLog: string //ここにチャットのデータを入れるようにする？
 }
 
 const SystemText: React.FC<ChatLogProp> = ({ ChatLog }) => {
@@ -23,6 +22,7 @@ const SystemText: React.FC<ChatLogProp> = ({ ChatLog }) => {
         borderColor: '#ddd',
         borderRadius: 1
       }}>
+        {/* ここからチャット欄の内容 */}
         <CommentMessage
           name={'ogaog'}
           comment={
@@ -51,6 +51,7 @@ const SystemText: React.FC<ChatLogProp> = ({ ChatLog }) => {
           }
           comment={'コメントあああeeああああああああああああああ'}
         />
+        {/* ここまでチャット欄の内容 */}
       </Box>
     </div>
   )

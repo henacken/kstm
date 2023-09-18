@@ -29,6 +29,13 @@ src/app/
 - pageファイル -> ルート(/)で表示されるファイル
 - page.module.css -> 特定のクラスでCSSを適応するためのファイル
 
+/compornents/
+Header(L3) = Icon(L1) + LogoutButton(L1)
+MessageSend(L2) = SendButton(L1) + MessageType(L1)
+CommentMassage(L2) = CommentName(L1) + CommentText(L1)
+SystemMessage(L2) = SystemName(L1) + SystemText(L1)
+ChatLogSpace(L3) = CommentMessage(L2) + SystemMessage(L2)
+
 ## Next.jsについての参考動画
 
 - [古いバージョン]https://youtu.be/eEP7CLqnRr0?si=0wv6KqRrTw3I5BLN
