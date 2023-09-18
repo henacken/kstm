@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField'
 const MessageType = () => {
   return (
     <div>
-      <TextField id="filled-basic" label="Comment" variant="filled"/>
+      <TextField id="filled-basic" label="Comment" variant="filled" />
     </div>
   )
 }

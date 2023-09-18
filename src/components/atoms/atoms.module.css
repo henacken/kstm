@@ -14,3 +14,27 @@
 .LogoutButton:hover {
   background-color: brown;
 } */
+
+.CommentName {
+  margin: 3px;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.CommentText {
+  margin: 3px;
+}
+
+.SystemName {
+  margin: 3px;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.SystemText {
+  margin: 3px;
+}
+
+.ChatLogSpace {
+  border: 3px;
+}

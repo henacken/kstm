@@ -1,4 +1,3 @@
-// 自由に画像を選び，挿入できるコンポーネント
 import React from 'react'
 
 interface LogoProps {
