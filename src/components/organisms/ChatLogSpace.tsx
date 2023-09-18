@@ -5,10 +5,17 @@ import CommentMessage from '@/components/molecules/CommentMessage'
 import SystemMessage from '@/components/molecules/SystemMessage'
 
 interface ChatLogProp {
-  ChatLog: string //ここにチャットのデータを入れるようにする？
+  chatLog: ChatItem[]
 }
 
-const ChatLogSpace: React.FC<ChatLogProp> = ({ ChatLog }) => {
+// このinterfaceを置くべきファイルを後で検討すること
+export interface ChatItem {
+  type: 'user' | 'system',
+  name: string,
+  comment: string
+}
+
+const ChatLogSpace: React.FC<ChatLogProp> = ({ chatLog }) => {
   return (
     <div>
       <Box
@@ -22,36 +29,14 @@ const ChatLogSpace: React.FC<ChatLogProp> = ({ ChatLog }) => {
           borderColor: '#ddd',
           borderRadius: 1
         }}>
-        {/* ここからチャット欄の内容 */}
-        <CommentMessage
-          name={'ogaog'}
-          comment={
-            'コメントああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ'
+        {chatLog.map((item, index) => {
+          if (item.type === 'user') {
+            return <CommentMessage key={index} name={item.name} comment={item.comment} />
+          } else if (item.type === 'system') {
+            return <SystemMessage key={index} name={item.name} comment={item.comment} />
           }
-        />
-        <CommentMessage
-          name={
-            'あああああああああああああああああああああああああああああああaa'
-          }
-          comment={'コメントあああeeああああああああああああああ'}
-        />
-        <SystemMessage
-          name={'システムメッセージあああ'}
-          comment={
-            'あああああああああああああああああああああああああああああああ'
-          }
-        />
-        <CommentMessage
-          name={'あああああああaa'}
-          comment={'コメントあああeeあaaaあああああああああああああ'}
-        />
-        <CommentMessage
-          name={
-            'ああaa'
-          }
-          comment={'コメントあああeeああああああああああああああ'}
-        />
-        {/* ここまでチャット欄の内容 */}
+          return false
+        })}
       </Box>
     </div>
   )
