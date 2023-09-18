@@ -8,20 +8,20 @@ interface ChatLogProp {
   ChatLog: string //ここにチャットのデータを入れるようにする？
 }
 
-const SystemText: React.FC<ChatLogProp> = ({ ChatLog }) => {
+const ChatLogSpace: React.FC<ChatLogProp> = ({ ChatLog }) => {
   return (
     <div>
       <Box
-      sx={{
-        width: 330,
-        maxHeight: 500,
-        backgroundColor: '#fff',
-        overflow: 'auto',
-        padding: 1.2,
-        border: 2,
-        borderColor: '#ddd',
-        borderRadius: 1
-      }}>
+        sx={{
+          width: 330,
+          maxHeight: 500,
+          backgroundColor: '#fff',
+          overflow: 'auto',
+          padding: 1.2,
+          border: 2,
+          borderColor: '#ddd',
+          borderRadius: 1
+        }}>
         {/* ここからチャット欄の内容 */}
         <CommentMessage
           name={'ogaog'}
@@ -57,4 +57,4 @@ const SystemText: React.FC<ChatLogProp> = ({ ChatLog }) => {
   )
 }
 
-export default SystemText
+export default ChatLogSpace

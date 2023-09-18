@@ -9,7 +9,7 @@ interface CommentProps {
   comment: string
 }
 
-const MessageSend: React.FC<CommentProps> = ({ name, comment }) => {
+const SystemMessage: React.FC<CommentProps> = ({ name, comment }) => {
   return (
     <Box
       sx={{
@@ -25,4 +25,4 @@ const MessageSend: React.FC<CommentProps> = ({ name, comment }) => {
   )
 }
 
-export default MessageSend
+export default SystemMessage
