@@ -21,11 +21,11 @@ nextApp.prepare().then(() => {
   })
 
   io.on('connection', (socket: typeof Socket) => {
-    socket.on('join', (roomId: any) => {
-      socket.join(roomId)
+    socket.on('join', (data: any) => {
+      socket.join(data.roomId)
       console.log('joined room!')
-      io.to(roomId).emit('message', {
-        comment: '入室しました',
+      io.to(data.roomId).emit('message', {
+        comment: data.username + 'さんが入室しました',
         name: 'システムメッセージ',
         type: 'system',
       })
