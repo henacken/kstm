@@ -1,10 +1,19 @@
 import React from 'react'
 import Button from '@mui/material/Button'
 
-const SendButton = () => {
+interface SendButtonProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+const SendButton = (props: SendButtonProps) => {
   return (
     <div>
-      <Button variant="contained" sx={{ height: '3.5rem' }} disableElevation>
+      <Button
+        variant="contained"
+        sx={{ height: '3.5rem' }}
+        disableElevation
+        onClick={props.onClick}
+      >
         send
       </Button>
     </div>
