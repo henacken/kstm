@@ -1,20 +1,26 @@
-"use client"
+'use client'
 //ライブ画面テンプレート
 import React, { useEffect, useState } from 'react'
-import io from "socket.io-client";
+import io from 'socket.io-client'
 import ChatLogSpace, { ChatItem } from '@/components/organisms/ChatLogSpace'
 import MessageSend from '@/components/molecules/MessageSend'
-import { getSession } from 'next-auth/react';
+import { getSession } from 'next-auth/react'
+
+interface CommnetItem {
+  type: 'user' | 'system'
+  name: string
+  comment: string
+}
 
 export default function Live() {
-  const [chatLog, setChatLog] = useState([]);
+  const [chatLog, setChatLog] = useState<CommnetItem[]>([])
 
-  const [socket, _] = useState(() => io());
+  const [socket, _] = useState(() => io())
+  const [connection, setConnection] = useState<boolean>(false)
   //const router = useRouter();
   //const { roomId, username } = router.query;
-  const [messages, setMessages] = useState([]);
 
-  const roomId = 'hello';
+  const roomId = 'hello'
 
   useEffect(() => {
     socket.on('connect', () => {
@@ -32,22 +38,20 @@ export default function Live() {
       })
   }, [])
 
-      });
-  }, []);
-
-  const buttonClick = () => {
-    socket.emit("message", { message: "test!" });
-  };
-
-  const sendMessage = (content: string) => {
-    socket.emit("message", { message: content })
-  };
+  const sendMessage = async (content: string) => {
+    socket.emit('message', {
+      message: content,
+      roomId,
+      username: (await getSession())?.user?.name || 'noname',
+    })
+  }
 
   return (
     <div>
       <h1>live</h1>
+      <p>{connection ? 'connected' : 'no connection'}</p>
       <ChatLogSpace chatLog={chatLog} />
-      <MessageSend />
+      <MessageSend onMessageSend={sendMessage} />
     </div>
   )
 }
