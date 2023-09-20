@@ -9,6 +9,7 @@ const MemoSpace = () => {
         label="MemoSpace"
         multiline
         rows={4}
+        sx={{width: 350}}
       />
     </div>
   )
