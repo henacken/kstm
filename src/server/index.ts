@@ -24,6 +24,7 @@ nextApp.prepare().then(() => {
       console.log('joined room!')
     })
     socket.on('message', (data: any) => {
+      console.log(data)
       io.to(data.roomId).emit('message', {
         message: data.message,
         username: data.username,
