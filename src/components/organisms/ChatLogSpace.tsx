@@ -10,8 +10,8 @@ interface ChatLogProp {
 
 // このinterfaceを置くべきファイルを後で検討すること
 export interface ChatItem {
-  type: 'user' | 'system',
-  name: string,
+  type: 'user' | 'system'
+  name: string
   comment: string
 }
 
@@ -27,13 +27,26 @@ const ChatLogSpace: React.FC<ChatLogProp> = ({ chatLog }) => {
           padding: 1.2,
           border: 2,
           borderColor: '#ddd',
-          borderRadius: 1
-        }}>
+          borderRadius: 1,
+        }}
+      >
         {chatLog.map((item, index) => {
           if (item.type === 'user') {
-            return <CommentMessage key={index} name={item.name} comment={item.comment} />
+            return (
+              <CommentMessage
+                key={index}
+                name={item.name}
+                comment={item.comment}
+              />
+            )
           } else if (item.type === 'system') {
-            return <SystemMessage key={index} name={item.name} comment={item.comment} />
+            return (
+              <SystemMessage
+                key={index}
+                name={item.name}
+                comment={item.comment}
+              />
+            )
           }
           return false
         })}

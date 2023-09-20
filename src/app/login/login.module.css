@@ -1,0 +1,48 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.loginButton {
+  /*中央揃え*/
+  display: flex;
+  align-items: center;
+  /*カラー諸々*/
+  background-color: none; /* ボタンの背景色 */
+  color: none; /* ボタンのテキストカラー */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5); /*テキストのボーダー色*/
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* ホバー時の背景色 */
+}
+
+.loginButton img {
+  margin-right: 10px;
+  width: 24px; /* アイコンのサイズ */
+  height: 24px; /* アイコンのサイズ */
+}
+
+/* ロゴイメージのスタイル */
+.logoImg {
+  max-width: 100px; /* ロゴイメージの最大幅 */
+}
+
+/* 他のカスタムスタイルはここに追加 */

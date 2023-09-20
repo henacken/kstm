@@ -14,6 +14,7 @@ export default function archive() {
         />
         <h1>LT-platform</h1>
         <h1>↓ランディングページ予定</h1>
+        <a href="/login">signin</a>
       </div>
     </div>
   )

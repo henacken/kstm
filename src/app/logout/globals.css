@@ -1,0 +1,11 @@
+:root {
+  /* 背景画像の設定 */
+  background-image: url('../../../public/images/LibertyStatePark.jpg'); /* 画像のパス */
+  background-size: cover; /* 画像をカバーするように調整 */
+  background-repeat: no-repeat; /* 繰り返しを無効に */
+  background-position: center center; /* 画像を中央に配置 */
+  /* 中央揃えのスタイルを追加 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
