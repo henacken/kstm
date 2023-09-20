@@ -16,46 +16,20 @@ interface CommnetItem {
 }
 
 export default function Live() {
-  const [chatLog, setChatLog] = useState<CommnetItem[]>([
-    {
-      type: 'user',
-      name: 'ogaog',
-      comment:
-        'コメントああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ',
-    },
-    {
-      type: 'user',
-      name: 'あああああああああああああああああああああああああああああああaa',
-      comment: 'コメントあああeeああああああああああああああ',
-    },
-    {
-      type: 'system',
-      name: 'システムメッセージあああ',
-      comment: 'あああああああああああああああああああああああああああああああ',
-    },
-    {
-      type: 'user',
-      name: 'あああああああaa',
-      comment: 'コメントあああeeあaaaあああああああああああああ',
-    },
-    {
-      type: 'user',
-      name: 'ああaa',
-      comment: 'コメントあああeeああああああああああああああ',
-    },
-  ])
+  const [chatLog, setChatLog] = useState<CommnetItem[]>([])
 
   const [socket, _] = useState(() => io())
+  const [connection, setConnection] = useState<boolean>(false)
   //const router = useRouter();
   //const { roomId, username } = router.query;
 
   const roomId = 'hello'
   useEffect(() => {
+    getSession().then((v) => {
+      socket.emit('join', { username: v?.user?.name || 'noname', roomId })
+    })
     socket.on('connect', () => {
-      console.log('socket connected')
-      getSession().then((v) => {
-        socket.emit('join', { username: v?.user?.name || 'noname', roomId })
-      })
+      setConnection(true)
     }),
       socket.on('message', (data) => {
         setChatLog((prev) => {
@@ -75,6 +49,7 @@ export default function Live() {
   return (
     <div>
       <h1>live</h1>
+      <p>{connection ? 'connected' : 'no connection'}</p>
       <ChatLogSpace chatLog={chatLog} />
       <MessageSend onMessageSend={sendMessage} />
     </div>
