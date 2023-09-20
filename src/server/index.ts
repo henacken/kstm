@@ -1,3 +1,5 @@
+const { getServerSession } = require('next-auth')
+
 const { createServer } = require('http')
 const express = require('express')
 const next = require('next')
@@ -22,12 +24,17 @@ nextApp.prepare().then(() => {
     socket.on('join', (roomId: any) => {
       socket.join(roomId)
       console.log('joined room!')
+      io.to(roomId).emit('message', {
+        comment: '入室しました',
+        name: 'システムメッセージ',
+        type: 'system',
+      })
     })
     socket.on('message', (data: any) => {
       io.to(data.roomId).emit('message', {
-        message: data.message,
-        username: data.username,
-        id: `${data.username}-${20}`,
+        comment: data.message,
+        name: data.username,
+        type: 'user',
       })
     })
   })
